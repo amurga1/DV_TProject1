@@ -18,7 +18,7 @@ The first visualization we made was the Crosstab. In this visualization we wante
 
 
 
-![](./crosstab.jpg)
+![](./crosstab2.png)
 
 
 ##Step 3
