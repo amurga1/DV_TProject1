@@ -1,4 +1,4 @@
-setwd("~/DataVisualization/DV_RProject3/01 Data/CSVs")
+setwd("~/DataVisualization/CSVs")
 
 file_path <- "Medicare_Hospital_Spending_by_Claim.csv"
 
@@ -54,3 +54,4 @@ if( length(measures) > 1 || ! is.na(measures)) {
 }
 sql <- paste(sql, ");")
 cat(sql)
+
