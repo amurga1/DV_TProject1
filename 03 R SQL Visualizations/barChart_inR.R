@@ -1,7 +1,9 @@
 #bar chart using R
 require("jsonlite")
 require(dplyr)
-head(medicare)
+require("ggplot2")
+require(extrafont)
+
 med1 <- medicare %>% select(STATE, AVGSPENDPEREPISODE_ST_, HOSPITAL_NAME) %>% group_by(STATE) %>% summarize(num_hospitals = n_distinct(HOSPITAL_NAME), avgSpending = sum(AVGSPENDPEREPISODE_ST_))%>% arrange(desc(STATE))
 View(med1)
 

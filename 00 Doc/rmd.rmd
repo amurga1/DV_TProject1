@@ -7,7 +7,7 @@ output: html_document
   
 In this project, we were given the task to create three tableau graphs based on the dataset of our choice. We decided to explore a dataset that was based on Medicare Spending. Our data set included medicare spending in a national, state and hospital level which was great to compare spendings across the United States. Also, it showed the types of patient claims that were made in each hospital and the percent spend by each hospital, state and average national percent. 
 
-#The Steps
+#Project 4 Steps
 
 ##Step 1
 The first step was to choose our data, which as explained in the introduction was the medicare data. Afterwards, we cleaned up the data using RStudio, created a reformatted csv file, a table in our SQL server and imported the data into our server. This enabled us to use our data in tableu. 
@@ -30,3 +30,19 @@ For our second visualization we created the scatter plot. Here, we wanted to see
 For our last visualization we created the barchart. In the bar chart we decided to display the amount of money that the hopsitals in each state spended and compare it to the other states. To do this we used States as our column parameter and SUM average spending per hospital as our row parameter. In consequence this gave us the total amount of money spend by each state. We then decided to put the reference line marking the average amount spend by all states. This enabled us to see which states were above and below average. Also, we decided to color the bar charts depending on the amount of hospitals that each state had; the more hospitals that each state had the closer the color got to a dark blue, and the less hospitals that each state had, the closer the color got to red. This also came as no surprise because the bar chart showed that the more hospitals each state had, the higher the spending. ok.
 
 ![](./barchart.jpg)
+
+# Project 5 Steps
+
+## Step 1
+The first thing we did was to replicate the bar graph we had made using Tableau in Project 4. This graph can be found in the 03 R SQL Visualizations under the name barChart_inR.R.Before executing the code for the visualization you must crete the data fram which can be found in the 01 Data folder. 
+
+```{r}
+source("../01 Data/Medicare_summary.R", echo = TRUE)
+source("../03 R SQL Visualizations/barChart_in.R", echo = TRUE)
+```
+
+##Step 2
+Afterwards we created the scatter plot graph. 
+```{r}
+source("../03 R SQL Visualizations/ScatterPlor_inR.R", echo = TRUE)
+```
