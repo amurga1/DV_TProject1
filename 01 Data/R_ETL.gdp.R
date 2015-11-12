@@ -1,4 +1,4 @@
-setwd("~/DataVisualization/DV_RProject3/01 Data/CSVs")
+setwd("~/DataVisualization/CSVs")
 
 file_path <- "usgs_state_2010.csv"
 
