@@ -911,7 +911,7 @@
   </worksheets>
   <windows>
     <window class='schema' source-height='-1' />
-    <window auto-hidden='0' class='worksheet' maximized='1' name='Sheet 1'>
+    <window auto-hidden='0' class='worksheet' maximized='0' name='Sheet 1'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -937,7 +937,7 @@
         </color-one-way>
       </highlight>
     </window>
-    <window auto-hidden='0' class='worksheet' maximized='0' name='Sheet 2'>
+    <window auto-hidden='0' class='worksheet' maximized='1' name='Sheet 2'>
       <cards>
         <edge name='left'>
           <strip size='160'>
