@@ -48,7 +48,17 @@ source("../03 R SQL Visualizations/ScatterPlor_inR.R", echo = TRUE)
 ```
 
 ##Step 3
-Finally we created the cross tab graph. 
+
+When we created our table in Tableau, we used parameters that were too difficult to reproduce in R, thus we simplified it. What we did is that we decided to use also our name measures of CLAIM TYPE and STATE. We then mapped the Average Spending per STATE in each of the claim type categories and the National Average Spending for each of the categories to the states.
+
+To create our KPI parameter, we then compared if the average spending of the states in the specific claim type category was below or above the national average spending for the specific category.
+
+Thus the KPI shows how the state spending for each specific category of claims compare to the national spending for each specific claim category.
+
+```{r}
+source("../03 R SQL Visualizations/crosstab_inR.R", echo = TRUE)
+```
+
 
 ##Step 4
 We continued our project by creating a blend of two data sets. We decided to blend the dataset for Medicare data and GDP per State that we had used in the previous projects. In order to blend this data we needed to join the Medicare data with a States abbreviation data in order to get the States Abbreviation onto the medicare data and then blend it with the States' GDP data. 

@@ -5,9 +5,41 @@ require(dplyr)
 
 # creating crosstab
 head(medicare)
-med4 <- medicare %>% select(CLAIM_TYPE, STATE, HOSPITAL_NAME, AVGSPENDINGPEREPISODE_HOSPI_) %>% arrange(desc(STATE))
 
-View(med4)
 
-m1 <- medicare %>% group_by(STATE, HOSPITAL_NAME) %>% summarize(mean_hosp = mean(AVGSPENDINGPEREPISODE_HOSPI_), mean_state = mean(AVGSPENDPEREPISODE_ST_)) %>% mutate(kpi = ifelse( mean_hosp <= mean_state, 'Lower', 'Higher')) 
-View(m1)
+m5 <- medicare %>% group_by(STATE) %>% distinct(CLAIM_TYPE) %>% select(STATE, AVGSPENDPEREPISODE_ST_, AVGSPENDPEREPISODE_NAT_, CLAIM_TYPE) %>% mutate(kpi = ifelse( AVGSPENDPEREPISODE_ST_ <= AVGSPENDPEREPISODE_NAT_, 'Lower', 'Higher')) 
+View(m5)
+
+
+
+spread(m5,CLAIM_TYPE, AVGSPENDINGPEREPISODE_HOSPI_) 
+ggplot() + 
+  coord_cartesian() + 
+  scale_x_discrete() +
+  scale_y_discrete() +
+  labs(title='Claim Type Sependings by Hospitals in States') +
+  labs(x=paste("CLAIM TYPE"), y=paste("STATE")) +
+  layer(data=m5, 
+        mapping=aes(x=CLAIM_TYPE, y=STATE, label=AVGSPENDPEREPISODE_ST_), 
+        stat="identity", 
+        stat_params=list(), 
+        geom="text",
+        geom_params=list(colour="black"), 
+        position=position_identity()
+  ) +
+  layer(data=m5, 
+        mapping=aes(x=CLAIM_TYPE, y=STATE, label=AVGSPENDPEREPISODE_NAT_), 
+        stat="identity", 
+        stat_params=list(), 
+        geom="text",
+        geom_params=list(colour="black", vjust=2), 
+        position=position_identity()
+  ) +
+  layer(data=m5, 
+        mapping=aes(x=CLAIM_TYPE, y=STATE, fill=kpi), 
+        stat="identity", 
+        stat_params=list(), 
+        geom="tile",
+        geom_params=list(alpha=.5), 
+        position=position_identity()
+  )
