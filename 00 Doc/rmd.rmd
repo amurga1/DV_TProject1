@@ -38,7 +38,7 @@ The first thing we did was to replicate the bar graph we had made using Tableau 
 
 ```{r}
 source("../01 Data/Medicare_summary.R", echo = TRUE)
-source("../03 R SQL Visualizations/barChart_in.R", echo = TRUE)
+source("../03 R SQL Visualizations/barChart_inR.R", echo = TRUE)
 ```
 
 ##Step 2
@@ -46,3 +46,28 @@ Afterwards we created the scatter plot graph.
 ```{r}
 source("../03 R SQL Visualizations/ScatterPlor_inR.R", echo = TRUE)
 ```
+
+##Step 3
+Finally we created the cross tab graph. 
+
+##Step 4
+We continued our project by creating a blend of two data sets. We decided to blend the dataset for Medicare data and GDP per State that we had used in the previous projects. In order to blend this data we needed to join the Medicare data with a States abbreviation data in order to get the States Abbreviation onto the medicare data and then blend it with the States' GDP data. 
+
+Here's the data frames of such data. 
+```{r}
+source("../01 Data/gdp_summary.R", echo=TRUE)
+source("../01 Data/statesAbbr_summary.R", echo=TRUE)
+```
+
+
+We began by doing this blend in R using SQL. You can find the blended data in the following documents followed by the visualization for it. 
+```{r}
+source("../01 Data/BlandedData.R", echo=TRUE)
+source("../03 R SQL Visualization/BlendedVisualization.R", echo = TRUE)
+```
+
+##Step 5
+
+We conducted the same blend using Tableau. You can find our data in the workbook called tableauworkbook2.twb in the 02 Tableau folder. The workbook has displayed the following graphs. As you can see this graphs are the same as the ones we reproduced in R. 
+
+![](./tableaublend.jpg)
