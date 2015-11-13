@@ -12,7 +12,6 @@ View(m5)
 
 
 
-spread(m5,CLAIM_TYPE, AVGSPENDINGPEREPISODE_HOSPI_) 
 ggplot() + 
   coord_cartesian() + 
   scale_x_discrete() +

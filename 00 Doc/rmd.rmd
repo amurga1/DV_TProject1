@@ -66,14 +66,14 @@ We continued our project by creating a blend of two data sets. We decided to ble
 Here's the data frames of such data. 
 ```{r}
 source("../01 Data/gdp_summary.R", echo=TRUE)
-source("../01 Data/statesAbbr_summary.R", echo=TRUE)
+source("../01 Data/statesAbbre_summary.R", echo=TRUE)
 ```
 
 
 We began by doing this blend in R using SQL. You can find the blended data in the following documents followed by the visualization for it. 
 ```{r}
 source("../01 Data/BlandedData.R", echo=TRUE)
-source("../03 R SQL Visualization/BlendedVisualization.R", echo = TRUE)
+source("../03 R SQL Visualizations/BlendedVisualization.R", echo = TRUE)
 ```
 
 ##Step 5
